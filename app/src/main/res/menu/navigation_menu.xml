@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/item1"
+        android:title="Home"
+        android:enabled="true"
+        app:cnb_iconColor="#FAF6F6"
+        app:cnb_textColor="#FAF6F6"
+        app:cnb_backgroundColor="#98A686"
+        android:icon="@drawable/ic_home_black_24dp"></item>
+
+    <item android:id="@+id/item2"
+        android:enabled="true"
+        android:title="Our Products"
+        app:cnb_iconColor="#FAF6F6"
+        app:cnb_textColor="#FAF6F6"
+        app:cnb_backgroundColor="#98A686"
+        android:icon="@drawable/ic_baseline_shopping_cart_24"></item>
+
+    <item android:id="@+id/item3"
+        android:title="Our services"
+        android:enabled="true"
+        app:cnb_iconColor="#FAF6F6"
+        app:cnb_textColor="#FAF6F6"
+        app:cnb_backgroundColor="#98A686"
+        android:icon="@drawable/ic_baseline_library_books_24"></item>
+
+    <item android:id="@+id/item4"
+        android:title="Account"
+        android:enabled="true"
+        app:cnb_iconColor="#FAF6F6"
+        app:cnb_textColor="#FAF6F6"
+        app:cnb_backgroundColor="#98A686"
+        android:icon="@drawable/ic_baseline_person_24"></item>
+
+
+
+
+
+</menu>
