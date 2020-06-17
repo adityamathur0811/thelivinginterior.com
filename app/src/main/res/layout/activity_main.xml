@@ -6,9 +6,7 @@
     android:background="#ffffff"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     tools:context=".MainActivity">
-
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_weight="1"
@@ -19,35 +17,15 @@
             android:background="@color/chipcolor"
             android:layout_height="wrap_content"
             android:layout_width="match_parent">
-
             <androidx.appcompat.widget.Toolbar
                 android:layout_width="match_parent"
                 android:id="@+id/toolbar"
+                app:titleTextColor="@color/white"
                 app:collapseIcon="@drawable/ic_baseline_arrow_back_24"
                 app:layout_scrollFlags="scroll|enterAlways"
                 android:layout_height="50dp">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="80dp"
-                    android:fontFamily="serif"
-                    android:text="The Living Interior"
-                    android:textColor="#ffffff"
-                    android:layout_gravity="center_vertical"
-                    android:textStyle="bold"
-                    android:textSize="22sp"></TextView>
-
-
-
-
-
-
             </androidx.appcompat.widget.Toolbar>
-
-
-
-
         </com.google.android.material.appbar.AppBarLayout>
 
 

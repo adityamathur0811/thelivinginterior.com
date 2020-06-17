@@ -6,7 +6,12 @@
         android:title="search"
         android:icon="@drawable/ic_baseline_search_24"
         app:actionViewClass="androidx.appcompat.widget.SearchView"
-        app:showAsAction="ifRoom|collapseActionView"></item>
+        app:showAsAction="ifRoom|collapseActionView"/>
+    <item
+        android:id="@+id/mic"
+        android:icon="@drawable/ic_baseline_mic_24"
+        android:title="@string/mic"
+        app:showAsAction="ifRoom|collapseActionView"/>
 
 
 
