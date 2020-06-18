@@ -14,7 +14,7 @@
 
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/appbar"
-            android:background="@color/chipcolor"
+            android:background="@color/chipColor"
             android:layout_height="wrap_content"
             android:layout_width="match_parent">
             <androidx.appcompat.widget.Toolbar
@@ -24,13 +24,8 @@
                 app:collapseIcon="@drawable/ic_baseline_arrow_back_24"
                 app:layout_scrollFlags="scroll|enterAlways"
                 android:layout_height="50dp">
-
             </androidx.appcompat.widget.Toolbar>
         </com.google.android.material.appbar.AppBarLayout>
-
-
-
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -40,22 +35,17 @@
             <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/frame1">
+                android:id="@+id/setFragment">
             </FrameLayout>
 
 
         </LinearLayout>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
-
-
-
-
     <com.ismaeldivita.chipnavigation.ChipNavigationBar
         android:layout_width="match_parent"
         android:id="@+id/nav"
         android:layout_alignParentBottom="true"
-        android:background="@color/chipcolor"
+        android:background="@color/chipColor"
         app:cnb_menuResource="@menu/navigation_menu"
         app:cnb_iconSize="25dp"
         android:layout_height="50dp" />

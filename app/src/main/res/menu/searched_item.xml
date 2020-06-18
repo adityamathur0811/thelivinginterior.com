@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item android:id="@+id/search_bar"
-        android:title="search"
+        android:title="@string/search"
         android:icon="@drawable/ic_baseline_search_24"
         app:actionViewClass="androidx.appcompat.widget.SearchView"
         app:showAsAction="ifRoom|collapseActionView"/>
@@ -12,7 +12,4 @@
         android:icon="@drawable/ic_baseline_mic_24"
         android:title="@string/mic"
         app:showAsAction="ifRoom|collapseActionView"/>
-
-
-
 </menu>
