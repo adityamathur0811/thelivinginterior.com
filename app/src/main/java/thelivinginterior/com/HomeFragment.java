@@ -28,11 +28,11 @@ import me.relex.circleindicator.CircleIndicator;
 public class HomeFragment extends Fragment {
     ViewPager viewPager;
     CircleIndicator indicator;
-    int pagecount=0;
+    int pageCount=0;
 
 
-    //  String[] pic ={R.drawable.a,R.drawable.images,R.drawable.pic};
-    ArrayList<String> picarray;
+    
+    ArrayList<String> picArray;
     ArrayList<String> demoPic;
 
     @Override
@@ -50,7 +50,7 @@ public class HomeFragment extends Fragment {
     }
     public void viewPagerImages()
     {
-        picarray=new ArrayList<>();
+        picArray=new ArrayList<>();
         demoPic=new ArrayList<>();
         FirebaseStorage storage = FirebaseStorage.getInstance();
         StorageReference storageReference = storage.getReference().child("viewPagerPics")
@@ -59,14 +59,12 @@ public class HomeFragment extends Fragment {
         storageReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
             @Override
             public void onSuccess(Uri uri) {
-                Log.d("myApp",uri.toString());
-                // Toast.makeText(getContext(), ""+uri.toString(), Toast.LENGTH_SHORT).show();
+              
                 demoPic.add(uri.toString());
-                Toast.makeText(getContext(), ""+demoPic.size(), Toast.LENGTH_SHORT).show();
-                picarray.addAll(demoPic);
+                picArray.addAll(demoPic);
 
 
-                viewPager.setAdapter( new ViewPagerAdapter(getContext(),picarray));
+                viewPager.setAdapter( new ViewPagerAdapter(getContext(),picArray));
                 indicator.setViewPager(viewPager);
             }
         }).addOnFailureListener(new OnFailureListener() {
@@ -82,12 +80,12 @@ public class HomeFragment extends Fragment {
             @Override
             public void run()
             {
-                if (pagecount==demoPic.size())
+                if (pageCount==demoPic.size())
                 {
-                    pagecount=0;
+                    pageCount=0;
 
                 }
-                viewPager.setCurrentItem(pagecount++,true);
+                viewPager.setCurrentItem(pageCount++,true);
 
 
             }
