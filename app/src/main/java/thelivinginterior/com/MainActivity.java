@@ -2,6 +2,7 @@ package thelivinginterior.com;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.speech.RecognizerIntent;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -16,12 +17,18 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.ismaeldivita.chipnavigation.ChipNavigationBar;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import java.util.Timer;
+import java.util.TimerTask;
+
+import me.relex.circleindicator.CircleIndicator;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -29,14 +36,16 @@ public class MainActivity extends AppCompatActivity {
     String search;
     FragmentManager fragmentManager;
     FragmentTransaction fragmentTransaction;
-    Fragment fragment;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setFragment(new HomeFragment());
+
         setContentView(R.layout.activity_main);
         toolbar = findViewById(R.id.toolbar);
+        setFragment(new HomeFragment());
         setSupportActionBar(toolbar);
+
         ChipNavigationBar bottomNavigationView = findViewById(R.id.nav);
         bottomNavigationView.setOnItemSelectedListener(new ChipNavigationBar.OnItemSelectedListener() {
             @Override
@@ -51,11 +60,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater menuInflater = getMenuInflater();
         menuInflater.inflate(R.menu.searched_item, menu);
         MenuItem searchBar = menu.findItem(R.id.search_bar);
+
+
         MenuItem mic = menu.findItem(R.id.mic);
         mic.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
             @Override
@@ -122,6 +134,7 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }
+
 
 
 }

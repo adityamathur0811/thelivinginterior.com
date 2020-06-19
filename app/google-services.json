@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "625005598984",
+    "firebase_url": "https://the-living-interior.firebaseio.com",
+    "project_id": "the-living-interior",
+    "storage_bucket": "the-living-interior.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:625005598984:android:7f7161289575b687bbb4bd",
+        "android_client_info": {
+          "package_name": "thelivinginterior.com"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "625005598984-q8qne0379meciifpfkduhoqp969p8md9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "thelivinginterior.com",
+            "certificate_hash": "54ae938ac2bc6dde599cb2cfa6f4314968de60ef"
+          }
+        },
+        {
+          "client_id": "625005598984-nfin7nt5irvfkf7rkoujpqlfm6acfshj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBMj0--ozCr_ZbWFlGmw2Btfbgzcp80kgs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "625005598984-nfin7nt5irvfkf7rkoujpqlfm6acfshj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
