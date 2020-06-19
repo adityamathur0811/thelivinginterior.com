@@ -1,22 +1,29 @@
 package thelivinginterior.com;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.lifecycle.GenericLifecycleObserver;
 import androidx.viewpager.widget.PagerAdapter;
+
+import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
 public class ViewPagerAdapter extends PagerAdapter {
-    ArrayList<Integer> image;
+    private final Context context;
+    ArrayList<String> image;
     LayoutInflater inflater;
-    public ViewPagerAdapter(Context context, ArrayList<Integer> image)
+    public ViewPagerAdapter(Context context, ArrayList<String> image)
     {
         this.image=image;
+        this.context=context;
         inflater=LayoutInflater.from(context);
 
     }
@@ -41,7 +48,8 @@ public class ViewPagerAdapter extends PagerAdapter {
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
         View view=inflater.inflate(R.layout.slide,container,false);
         ImageView img=(ImageView) view.findViewById(R.id.imageview);
-        img.setImageResource(image.get(position));
+        String link=image.get(position);
+        Glide.with(context).load(link).into(img);
         container.addView(view,0);
         return view;
     }

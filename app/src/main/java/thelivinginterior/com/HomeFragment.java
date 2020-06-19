@@ -15,14 +15,9 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.storage.FileDownloadTask;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -35,11 +30,10 @@ public class HomeFragment extends Fragment {
     CircleIndicator indicator;
     int pagecount=0;
 
-    String imgUrl;
 
-
-    Integer[] pic ={R.drawable.a,R.drawable.images,R.drawable.pic};
-    ArrayList<Integer> picarray=new ArrayList<Integer>();
+    //  String[] pic ={R.drawable.a,R.drawable.images,R.drawable.pic};
+    ArrayList<String> picarray;
+    ArrayList<String> demoPic;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -51,6 +45,13 @@ public class HomeFragment extends Fragment {
         viewPagerImages();
 
 
+
+        return v;
+    }
+    public void viewPagerImages()
+    {
+        picarray=new ArrayList<>();
+        demoPic=new ArrayList<>();
         FirebaseStorage storage = FirebaseStorage.getInstance();
         StorageReference storageReference = storage.getReference().child("viewPagerPics")
                 .child("1.jpeg");
@@ -59,7 +60,14 @@ public class HomeFragment extends Fragment {
             @Override
             public void onSuccess(Uri uri) {
                 Log.d("myApp",uri.toString());
-                Toast.makeText(getContext(), ""+uri.toString(), Toast.LENGTH_SHORT).show();
+                // Toast.makeText(getContext(), ""+uri.toString(), Toast.LENGTH_SHORT).show();
+                demoPic.add(uri.toString());
+                Toast.makeText(getContext(), ""+demoPic.size(), Toast.LENGTH_SHORT).show();
+                picarray.addAll(demoPic);
+
+
+                viewPager.setAdapter( new ViewPagerAdapter(getContext(),picarray));
+                indicator.setViewPager(viewPager);
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
@@ -69,26 +77,12 @@ public class HomeFragment extends Fragment {
         });
 
 
-
-
-
-        return v;
-    }
-    public void viewPagerImages()
-    {
-        for (int i=0;i<pic.length;i++)
-
-            picarray.add(pic[i]);
-
-        viewPager.setAdapter( new ViewPagerAdapter(getContext(),picarray));
-        indicator.setViewPager(viewPager);
-
         final Handler handler=new Handler();
         final Runnable update=new Runnable() {
             @Override
             public void run()
             {
-                if (pagecount==pic.length)
+                if (pagecount==demoPic.size())
                 {
                     pagecount=0;
 
