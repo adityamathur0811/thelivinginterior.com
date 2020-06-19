@@ -46,6 +46,8 @@ public class MainActivity extends AppCompatActivity {
         setFragment(new HomeFragment());
         setSupportActionBar(toolbar);
 
+
+
         ChipNavigationBar bottomNavigationView = findViewById(R.id.nav);
         bottomNavigationView.setOnItemSelectedListener(new ChipNavigationBar.OnItemSelectedListener() {
             @Override

@@ -1,23 +1,28 @@
 package thelivinginterior.com;
 
-import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-import androidx.viewpager.widget.ViewPager;
-
 import android.os.Handler;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.viewpager.widget.ViewPager;
+
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FileDownloadTask;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -29,10 +34,13 @@ public class HomeFragment extends Fragment {
     ViewPager viewPager;
     CircleIndicator indicator;
     int pagecount=0;
+
+    String imgUrl;
+
+
     Integer[] pic ={R.drawable.a,R.drawable.images,R.drawable.pic};
     ArrayList<Integer> picarray=new ArrayList<Integer>();
 
-    private static Uri filepath;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -41,6 +49,26 @@ public class HomeFragment extends Fragment {
         viewPager=v.findViewById(R.id.viewpager);
         indicator=v.findViewById(R.id.indicator);
         viewPagerImages();
+
+
+        FirebaseStorage storage = FirebaseStorage.getInstance();
+        StorageReference storageReference = storage.getReference().child("viewPagerPics")
+                .child("1.jpeg");
+
+        storageReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+            @Override
+            public void onSuccess(Uri uri) {
+                Log.d("myApp",uri.toString());
+                Toast.makeText(getContext(), ""+uri.toString(), Toast.LENGTH_SHORT).show();
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Log.d("myApp","error");
+            }
+        });
+
+
 
 
 
@@ -77,6 +105,10 @@ public class HomeFragment extends Fragment {
                 handler.post(update);
             }
         },3000,3000);
+
+
     }
+
+
 
 }
