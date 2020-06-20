@@ -1,5 +1,6 @@
 package thelivinginterior.com;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -7,9 +8,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
@@ -26,11 +30,13 @@ import java.util.TimerTask;
 import me.relex.circleindicator.CircleIndicator;
 
 
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment implements Button.OnClickListener {
     ViewPager viewPager;
     CircleIndicator indicator;
     RecyclerView recyclerView;
     int pageCount=0;
+
+    Button b1,b2,b3,b4,b5,b6;
 
 
 
@@ -46,6 +52,18 @@ public class HomeFragment extends Fragment {
         viewPager=v.findViewById(R.id.viewpager);
         indicator=v.findViewById(R.id.indicator);
         recyclerView=v.findViewById(R.id.rec_id);
+        b1=v.findViewById(R.id.bedRoom);
+        b2=v.findViewById(R.id.drawingRoom);
+        b3=v.findViewById(R.id.kitchen);
+        b4=v.findViewById(R.id.bathRoom);
+        b5=v.findViewById(R.id.terrace);
+        b6=v.findViewById(R.id.garden);
+        b1.setOnClickListener(this);
+        b2.setOnClickListener(this);
+        b3.setOnClickListener(this);
+        b4.setOnClickListener(this);
+        b5.setOnClickListener(this);
+        b6.setOnClickListener(this);
 
 
 
@@ -140,5 +158,16 @@ public class HomeFragment extends Fragment {
 
 
         }
+    }
+
+
+    @Override
+    public void onClick(View v) {
+        if (v==b1)
+        {
+            Intent i=new Intent(getActivity(),BadRoom.class);
+            startActivity(i);
+        }
+
     }
 }
