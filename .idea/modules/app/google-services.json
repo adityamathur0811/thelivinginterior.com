@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "218573861609",
+    "firebase_url": "https://thelivinginterior-cab60.firebaseio.com",
+    "project_id": "thelivinginterior-cab60",
+    "storage_bucket": "thelivinginterior-cab60.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:218573861609:android:1419059275a3ed7ccd7678",
+        "android_client_info": {
+          "package_name": "thelivinginterior.com"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "218573861609-kapeh2uhpprcrvesik9cejvnso03h2ls.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "thelivinginterior.com",
+            "certificate_hash": "8c7ffba7a021c1c0fd9e3d6c021aaca9ffd522a4"
+          }
+        },
+        {
+          "client_id": "218573861609-ks6dk0t4gop77b7viaur5l9d82mvrkbv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXcQ8FFpy_Yj6pRh7YotnCGDxxrA7Ct0g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "218573861609-ks6dk0t4gop77b7viaur5l9d82mvrkbv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

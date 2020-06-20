@@ -2,14 +2,14 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
     <gradient
         android:centerColor="#E0DDE3"
-        android:endColor="#C82940"
-        android:startColor="#BC4F7C"
+        android:endColor="#C9D556"
+        android:startColor="#9F68DD"
         >
 
     </gradient>
-    <corners android:topLeftRadius="25dp"
-        android:topRightRadius="25dp"
-        android:bottomLeftRadius="25dp"
-        android:bottomRightRadius="25dp"></corners>
+    <corners android:topLeftRadius="10dp"
+        android:topRightRadius="10dp"
+        android:bottomLeftRadius="10dp"
+        android:bottomRightRadius="10dp"></corners>
 
 </shape>

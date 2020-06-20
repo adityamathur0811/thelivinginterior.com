@@ -4,15 +4,20 @@
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
+    android:background="#E8EDEB"
     android:layout_height="match_parent"
     tools:context=".HomeFragment">
+
     <androidx.core.widget.NestedScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical">
+
+
 
             <FrameLayout
                 android:layout_width="match_parent"
@@ -33,12 +38,17 @@
                     android:layout_marginTop="140dp"/>
             </FrameLayout>
 
-
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="5dp"
+                android:layout_marginTop="10dp"
+                app:cardUseCompatPadding="true"
+                app:cardElevation="5dp">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-                android:layout_marginTop="10dp"
                 android:layout_centerHorizontal="true"
                 android:orientation="vertical">
 
@@ -47,55 +57,65 @@
                     android:layout_height="wrap_content"
                     android:text="@string/designs_by_categories"
                     android:textSize="20sp"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="5dp"
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:fontFamily="@font/almendra"
                     android:textStyle="bold"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginBottom="5dp"
                     android:textColor="#000000"></TextView>
+
+                <View
+                    android:layout_width="185dp"
+                    android:layout_height="1dp"
+                    android:layout_gravity="center"
+                    android:background="#000000"></View>
+
+
+
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="5dp"
+                    android:padding="10dp"
+
                     android:orientation="horizontal">
 
                     <Button
                         android:id="@+id/bedRoom"
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginRight="10dp"
                         android:layout_weight="1"
-                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="10dp"
                         android:background="@drawable/grad"
-                        android:fontFamily="@font/amita"
-                        android:text="Bed Room"
+                        android:text="Kitchen"
                         android:textAllCaps="false"
-                        android:textColor="#000000"
+                        android:layout_marginLeft="5dp"
+                        android:fontFamily="@font/amita"
+                        android:textStyle="bold"
                         android:textSize="18sp"
-                        android:textStyle="bold" />
+                        android:textColor="#000000" />
 
                     <Button
                         android:id="@+id/drawingRoom"
                         android:layout_width="100dp"
-                        android:background="@drawable/gradback"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Drawing Room"
+                        android:background="@drawable/gradback"
+                        android:text="Bath Room"
+                        android:layout_marginRight="5dp"
                         android:textAllCaps="false"
                         android:fontFamily="@font/amita"
                         android:textStyle="bold"
-                        android:layout_marginRight="5dp"
                         android:textSize="18sp"
-                        android:textColor="#000000"/>
+                        android:textColor="#000000" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="5dp"
-                    android:layout_marginTop="10dp"
+                    android:padding="10dp"
+
                     android:orientation="horizontal">
 
                     <Button
@@ -107,7 +127,6 @@
                         android:background="@drawable/back"
                         android:text="Kitchen"
                         android:textAllCaps="false"
-
                         android:layout_marginLeft="5dp"
                         android:fontFamily="@font/amita"
                         android:textStyle="bold"
@@ -132,8 +151,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="5dp"
-                    android:layout_marginTop="10dp"
+                    android:padding="10dp"
+                    android:layout_marginBottom="5dp"
                     android:orientation="horizontal">
 
                     <Button
@@ -165,16 +184,42 @@
                         android:layout_marginRight="5dp"
                         android:textColor="#000000" />
                 </LinearLayout>
+
+
             </LinearLayout>
+            </androidx.cardview.widget.CardView>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="5dp"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="Our finished projects!"
+        android:layout_gravity="center"
+        android:textSize="12sp"
+        android:padding="2dp"
+        android:background="@drawable/white"
+        android:gravity="center"
+        android:textColor="#000000">
+
+    </TextView>
+
+
+</LinearLayout>
+
+
             <androidx.recyclerview.widget.RecyclerView
-                android:layout_width="match_parent"
-                android:layout_marginTop="10dp"
-                android:layout_height="250dp"
-                android:id="@+id/rec_id">
-            </androidx.recyclerview.widget.RecyclerView>
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/recyclerView">
+                </androidx.recyclerview.widget.RecyclerView>
 
         </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>
+
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

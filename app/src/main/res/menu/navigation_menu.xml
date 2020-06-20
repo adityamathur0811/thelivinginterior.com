@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cnb_unselectedColor="#FAF5F5">
 
     <item android:id="@+id/item1"
         android:title="Home"
         android:enabled="true"
+
         app:cnb_iconColor="#FAF6F6"
         app:cnb_textColor="#FAF6F6"
-        app:cnb_backgroundColor="#98A686"
+        app:cnb_backgroundColor="#0A5460"
         android:icon="@drawable/ic_home_black_24dp"></item>
 
     <item android:id="@+id/item2"
@@ -15,7 +17,7 @@
         android:title="Our Products"
         app:cnb_iconColor="#FAF6F6"
         app:cnb_textColor="#FAF6F6"
-        app:cnb_backgroundColor="#98A686"
+        app:cnb_backgroundColor="#0A5460"
         android:icon="@drawable/ic_baseline_shopping_cart_24"></item>
 
     <item android:id="@+id/item3"
@@ -23,7 +25,7 @@
         android:enabled="true"
         app:cnb_iconColor="#FAF6F6"
         app:cnb_textColor="#FAF6F6"
-        app:cnb_backgroundColor="#98A686"
+        app:cnb_backgroundColor="#0A5460"
         android:icon="@drawable/ic_baseline_library_books_24"></item>
 
     <item android:id="@+id/item4"
@@ -31,7 +33,7 @@
         android:enabled="true"
         app:cnb_iconColor="#FAF6F6"
         app:cnb_textColor="#FAF6F6"
-        app:cnb_backgroundColor="#98A686"
+        app:cnb_backgroundColor="#0A5460"
         android:icon="@drawable/ic_baseline_person_24"></item>
 
 

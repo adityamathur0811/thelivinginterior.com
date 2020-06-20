@@ -15,7 +15,7 @@
 
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/appbar"
-            android:background="@color/chipColor"
+            android:background="@drawable/tlback"
             android:layout_height="wrap_content"
             android:layout_width="match_parent">
             <androidx.appcompat.widget.Toolbar
@@ -47,7 +47,9 @@
         android:layout_width="match_parent"
         android:id="@+id/nav"
         android:layout_alignParentBottom="true"
-        android:background="@color/chipColor"
+        android:background="@drawable/tlback"
+        app:cnb_unselectedColor="#ffffff"
+
         app:cnb_menuResource="@menu/navigation_menu"
         app:cnb_iconSize="25dp"
         android:layout_height="50dp" />
