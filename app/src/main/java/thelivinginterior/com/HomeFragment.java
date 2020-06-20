@@ -10,6 +10,8 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -27,6 +29,7 @@ import me.relex.circleindicator.CircleIndicator;
 public class HomeFragment extends Fragment {
     ViewPager viewPager;
     CircleIndicator indicator;
+    RecyclerView recyclerView;
     int pageCount=0;
 
 
@@ -42,10 +45,12 @@ public class HomeFragment extends Fragment {
         View v= inflater.inflate(R.layout.fragment_home, container, false);
         viewPager=v.findViewById(R.id.viewpager);
         indicator=v.findViewById(R.id.indicator);
+        recyclerView=v.findViewById(R.id.rec_id);
+
 
 
         viewPagerImages();
-
+        recImage();
 
 
         return v;
@@ -105,5 +110,35 @@ public class HomeFragment extends Fragment {
 
 
     }
+    private void recImage() {
 
+        final LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
+
+        for (int i = 1; i <= 5; i++) {
+            String path = i + ".jpeg";
+
+
+            FirebaseStorage storage = FirebaseStorage.getInstance();
+
+            StorageReference storageReference = storage.getReference().child("DemoPics")
+                    .child(path);
+
+            storageReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                @Override
+                public void onSuccess(Uri uri) {
+
+                    picArray.add(uri.toString());
+                    recyclerView.setLayoutManager(linearLayoutManager);
+                    recyclerView.setAdapter(new RecyclerAdapter(picArray, getActivity()));
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Log.d("myApp", "error");
+                }
+            });
+
+
+        }
+    }
 }

@@ -156,5 +156,9 @@
                 android:textColor="#000000" />
         </LinearLayout>
     </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:id="@+id/rec_id"/>
 
 </LinearLayout>

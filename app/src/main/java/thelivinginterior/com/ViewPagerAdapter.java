@@ -44,7 +44,7 @@ public class ViewPagerAdapter extends PagerAdapter {
     @Override
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
         View view=inflater.inflate(R.layout.slide,container,false);
-        ImageView img= view.findViewById(R.id.imageview);
+        ImageView img= view.findViewById(R.id.imageView);
         String link=image.get(position);
         Glide.with(context).load(link).into(img);
         container.addView(view,0);
