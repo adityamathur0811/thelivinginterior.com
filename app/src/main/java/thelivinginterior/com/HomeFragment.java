@@ -30,17 +30,19 @@ public class HomeFragment extends Fragment {
     int pageCount=0;
 
 
-    
+
     ArrayList<String> picArray;
     ArrayList<String> demoPic;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
+        picArray = new ArrayList<>();
+        demoPic = new ArrayList<>();
         View v= inflater.inflate(R.layout.fragment_home, container, false);
         viewPager=v.findViewById(R.id.viewpager);
         indicator=v.findViewById(R.id.indicator);
+
 
         viewPagerImages();
 
@@ -49,10 +51,9 @@ public class HomeFragment extends Fragment {
         return v;
     }
     public void viewPagerImages() {
-        picArray = new ArrayList<>();
-        demoPic = new ArrayList<>();
-        for (int i = 1; i <= 5; i++) {
-            String path = i + ".jpeg";
+
+        for (int i = 0; i < 5; i++) {
+            String path = i + ".jpg";
 
 
             FirebaseStorage storage = FirebaseStorage.getInstance();
@@ -65,8 +66,7 @@ public class HomeFragment extends Fragment {
                 public void onSuccess(Uri uri) {
 
                     demoPic.add(uri.toString());
-                    picArray.addAll(demoPic);
-                    viewPager.setAdapter(new ViewPagerAdapter(getContext(), picArray));
+                    viewPager.setAdapter(new ViewPagerAdapter(getContext(), demoPic));
                     indicator.setViewPager(viewPager);
 
                 }
@@ -84,9 +84,9 @@ public class HomeFragment extends Fragment {
             final Runnable update = new Runnable() {
                 @Override
                 public void run() {
-                    if (pageCount == demoPic.size()) {
+                    if (pageCount == demoPic.size())
+                    {
                         pageCount = 0;
-
                     }
                     viewPager.setCurrentItem(pageCount++, true);
 
