@@ -132,13 +132,13 @@ public class HomeFragment extends Fragment implements Button.OnClickListener {
 
         final LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
 
-        for (int i = 1; i <= 5; i++) {
-            String path = i + ".jpeg";
+        for (int i = 0; i < 5; i++) {
+            String path = i + ".jpg";
 
 
             FirebaseStorage storage = FirebaseStorage.getInstance();
 
-            StorageReference storageReference = storage.getReference().child("DemoPics")
+            StorageReference storageReference = storage.getReference().child("viewPagerPics")
                     .child(path);
 
             storageReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
