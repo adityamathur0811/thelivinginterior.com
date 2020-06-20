@@ -168,6 +168,12 @@ public class HomeFragment extends Fragment implements Button.OnClickListener {
             Intent i=new Intent(getActivity(),BadRoom.class);
             startActivity(i);
         }
+        if (v==b2)
+        {
+            Intent i=new Intent(getActivity(),DrawingRoom.class);
+            startActivity(i);
+        }
+
 
     }
 }
