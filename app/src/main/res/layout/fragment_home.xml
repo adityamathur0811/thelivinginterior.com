@@ -8,7 +8,7 @@
     tools:context=".HomeFragment">
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="250dp"
         android:id="@+id/rel"
         tools:ignore="UselessParent">
         <androidx.viewpager.widget.ViewPager
