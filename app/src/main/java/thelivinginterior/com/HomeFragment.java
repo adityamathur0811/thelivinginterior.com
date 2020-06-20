@@ -38,6 +38,8 @@ public class HomeFragment extends Fragment implements Button.OnClickListener {
 
     Button b1,b2,b3,b4,b5,b6;
 
+    Integer    image[] = {R.drawable.one,R.drawable.one,R.drawable.one,
+            R.drawable.one,R.drawable.one};
 
 
     ArrayList<String> picArray;
@@ -48,10 +50,11 @@ public class HomeFragment extends Fragment implements Button.OnClickListener {
                              Bundle savedInstanceState) {
         picArray = new ArrayList<>();
         demoPic = new ArrayList<>();
+
         View v= inflater.inflate(R.layout.fragment_home, container, false);
         viewPager=v.findViewById(R.id.viewpager);
         indicator=v.findViewById(R.id.indicator);
-        recyclerView=v.findViewById(R.id.rec_id);
+        recyclerView=v.findViewById(R.id.recyclerView);
         b1=v.findViewById(R.id.bedRoom);
         b2=v.findViewById(R.id.drawingRoom);
         b3=v.findViewById(R.id.kitchen);
@@ -69,6 +72,13 @@ public class HomeFragment extends Fragment implements Button.OnClickListener {
 
         viewPagerImages();
         recImage();
+
+         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
+
+        MyAdapter adapter = new MyAdapter(getContext(),image);
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(linearLayoutManager);
+
 
 
         return v;
@@ -130,7 +140,6 @@ public class HomeFragment extends Fragment implements Button.OnClickListener {
     }
     private void recImage() {
 
-        final LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
 
         for (int i = 0; i < 5; i++) {
             String path = i + ".jpg";
@@ -146,8 +155,8 @@ public class HomeFragment extends Fragment implements Button.OnClickListener {
                 public void onSuccess(Uri uri) {
 
                     picArray.add(uri.toString());
-                    recyclerView.setLayoutManager(linearLayoutManager);
-                    recyclerView.setAdapter(new RecyclerAdapter(picArray, getActivity()));
+                    //recyclerView.setLayoutManager(linearLayoutManager);
+                    //recyclerView.setAdapter(new RecyclerAdapter(picArray, getActivity()));
                 }
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
