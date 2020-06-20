@@ -13,15 +13,19 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+
+import java.util.ArrayList;
+
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>
 {
 
-    Integer    image[];
+    ArrayList list;
     Context context;
-    public MyAdapter(Context cc, Integer img[] )
+    public MyAdapter(Context cc, ArrayList li )
     {
         context = cc;
-        image   = img;
+        list   = li;
     }
     @NonNull
     @Override
@@ -36,14 +40,18 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>
     public void onBindViewHolder(@NonNull MyViewHolder holder, final int position)
     {
 
-        holder.imageView.setImageResource(image[position]);
+
+        Glide.with(context)
+                .load(list.get(position))
+                .into(holder.imageView);
+        //holder.imageView.setImageResource(oo);
 
     }
 
     @Override
     public int getItemCount() {
 
-        return image.length;
+        return list.size();
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {

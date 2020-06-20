@@ -42,7 +42,7 @@ public class HomeFragment extends Fragment implements Button.OnClickListener {
             R.drawable.one,R.drawable.one};
 
 
-    ArrayList<String> picArray;
+    ArrayList<String> picArray,pic;
     ArrayList<String> demoPic;
 
     @Override
@@ -72,14 +72,7 @@ public class HomeFragment extends Fragment implements Button.OnClickListener {
 
         viewPagerImages();
         recImage();
-
-         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
-
-        MyAdapter adapter = new MyAdapter(getContext(),image);
-        recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(linearLayoutManager);
-
-
+        recyclerViewImage();
 
         return v;
     }
@@ -155,8 +148,7 @@ public class HomeFragment extends Fragment implements Button.OnClickListener {
                 public void onSuccess(Uri uri) {
 
                     picArray.add(uri.toString());
-                    //recyclerView.setLayoutManager(linearLayoutManager);
-                    //recyclerView.setAdapter(new RecyclerAdapter(picArray, getActivity()));
+
                 }
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
@@ -182,6 +174,42 @@ public class HomeFragment extends Fragment implements Button.OnClickListener {
             Intent i=new Intent(getActivity(),DrawingRoom.class);
             startActivity(i);
         }
+
+
+    }
+
+    public  void  recyclerViewImage()
+    {
+     pic = new ArrayList<>();
+        for (int i = 0; i < 5; i++)
+        {
+            String path = i + ".jpg";
+
+
+            FirebaseStorage storage = FirebaseStorage.getInstance();
+
+            StorageReference storageReference = storage.getReference().child("viewPagerPics")
+                    .child(path);
+
+            storageReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                @Override
+                public void onSuccess(Uri uri) {
+                    pic.add(uri.toString());
+                    LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(),
+                            LinearLayoutManager.VERTICAL, false);
+
+                    MyAdapter adapter = new MyAdapter(getContext(),pic);
+                    recyclerView.setAdapter(adapter);
+                    recyclerView.setLayoutManager(linearLayoutManager);
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Log.d("myApp", "error");
+                }
+            });
+        }
+
 
 
     }
