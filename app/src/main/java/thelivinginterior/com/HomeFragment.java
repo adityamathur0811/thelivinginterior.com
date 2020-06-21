@@ -50,7 +50,7 @@ public class HomeFragment extends Fragment implements Button.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         picArray = new ArrayList<>();
-        demoPic = new ArrayList<>();
+
 
         View v= inflater.inflate(R.layout.fragment_home, container, false);
         viewPager=v.findViewById(R.id.viewpager);
@@ -75,37 +75,30 @@ public class HomeFragment extends Fragment implements Button.OnClickListener {
 
         getImages();
 
+
         return v;
     }
     public void viewPagerImages() {
 
-        for (int i = 0; i < 5; i++) {
-            String path = i + ".jpg";
-
-
-            FirebaseStorage storage = FirebaseStorage.getInstance();
-
-            StorageReference storageReference = storage.getReference().child("viewPagerPics")
-                    .child(path);
-
-            storageReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                @Override
-                public void onSuccess(Uri uri) {
-
-                    demoPic.add(uri.toString());
+        databaseReference= FirebaseDatabase.getInstance().getReference("ViewPager");
+        demoPic = new ArrayList<>();
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for(DataSnapshot snapshot:dataSnapshot.getChildren())
+                {
+                    Pojo pojo=snapshot.getValue(Pojo.class);
+                    demoPic.add(pojo.getImage());
                     viewPager.setAdapter(new ViewPagerAdapter(getContext(), demoPic));
                     indicator.setViewPager(viewPager);
-
                 }
-            }).addOnFailureListener(new OnFailureListener() {
-                @Override
-                public void onFailure(@NonNull Exception e) {
-                    Log.d("myApp", "error");
-                }
-            });
+            }
 
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
 
-        }
+            }
+        });
 
             final Handler handler = new Handler();
             final Runnable update = new Runnable() {
@@ -161,7 +154,7 @@ public class HomeFragment extends Fragment implements Button.OnClickListener {
             Intent i=new Intent(getActivity(),Terrace.class);
             startActivity(i);
         }
-        else
+        if (v==b6)
         {
             Intent i=new Intent(getActivity(),Garden.class);
             startActivity(i);
