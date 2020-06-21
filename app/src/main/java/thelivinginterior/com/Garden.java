@@ -24,7 +24,7 @@ public class Garden extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_garden);
-        recyclerView = findViewById(R.id.bad_room);
+        recyclerView = findViewById(R.id.garden);
         arrayList= new ArrayList<>();
         recImage();
 

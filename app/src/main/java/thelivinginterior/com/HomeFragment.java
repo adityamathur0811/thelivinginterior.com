@@ -18,6 +18,11 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
@@ -32,6 +37,8 @@ public class HomeFragment extends Fragment implements Button.OnClickListener {
     ViewPager viewPager;
     CircleIndicator indicator;
     RecyclerView recyclerView;
+    DatabaseReference databaseReference;
+    ArrayList<Pojo> arrayList;
     int pageCount=0;
 
     Button b1,b2,b3,b4,b5,b6;
@@ -66,7 +73,7 @@ public class HomeFragment extends Fragment implements Button.OnClickListener {
 
         viewPagerImages();
 
-        recyclerViewImage();
+        getImages();
 
         return v;
     }
@@ -197,5 +204,29 @@ public class HomeFragment extends Fragment implements Button.OnClickListener {
 
 
 
+    }
+    private void getImages()
+    {
+        LinearLayoutManager linearLayoutManager=new LinearLayoutManager(getContext());
+        recyclerView.setLayoutManager(linearLayoutManager);
+
+        databaseReference= FirebaseDatabase.getInstance().getReference("HomeImages");
+        arrayList=new ArrayList<Pojo>();
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for(DataSnapshot snapshot:dataSnapshot.getChildren())
+                {
+                    Pojo pojo=snapshot.getValue(Pojo.class);
+                    arrayList.add(pojo);
+                    recyclerView.setAdapter(new Adaapter(getActivity(),arrayList));
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 }

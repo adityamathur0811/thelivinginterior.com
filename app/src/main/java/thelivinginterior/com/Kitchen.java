@@ -24,7 +24,7 @@ public class Kitchen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kitchen);
-        recyclerView = findViewById(R.id.bad_room);
+        recyclerView = findViewById(R.id.kitchen);
         arrayList= new ArrayList<>();
         recImage();
 
