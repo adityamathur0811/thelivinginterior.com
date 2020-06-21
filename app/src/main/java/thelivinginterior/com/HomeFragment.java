@@ -163,41 +163,6 @@ public class HomeFragment extends Fragment implements Button.OnClickListener {
 
     }
 
-    public  void  recyclerViewImage()
-    {
-     pic = new ArrayList<>();
-        for (int i = 0; i < 5; i++)
-        {
-            String path = i + ".jpg";
-
-
-            FirebaseStorage storage = FirebaseStorage.getInstance();
-
-            StorageReference storageReference = storage.getReference().child("viewPagerPics")
-                    .child(path);
-
-            storageReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                @Override
-                public void onSuccess(Uri uri) {
-                    pic.add(uri.toString());
-                    LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(),
-                            LinearLayoutManager.VERTICAL, false);
-
-                    MyAdapter adapter = new MyAdapter(getContext(),pic);
-                    recyclerView.setAdapter(adapter);
-                    recyclerView.setLayoutManager(linearLayoutManager);
-                }
-            }).addOnFailureListener(new OnFailureListener() {
-                @Override
-                public void onFailure(@NonNull Exception e) {
-                    Log.d("myApp", "error");
-                }
-            });
-        }
-
-
-
-    }
     private void getImages()
     {
         LinearLayoutManager linearLayoutManager=new LinearLayoutManager(getContext());
