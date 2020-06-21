@@ -5,4 +5,11 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="designs_by_categories">Designs by categories</string>
+    <string name="our_finished_projects">Our finished projects!</string>
+    <string name="garden">Garden</string>
+    <string name="terrace">Terrace</string>
+    <string name="bath_room">Bath Room</string>
+    <string name="kitchen">Kitchen</string>
+    <string name="drawing_room">Drawing Room</string>
+    <string name="bad_room">Bad Room</string>
 </resources>

@@ -17,14 +17,13 @@ import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
 
-public class BadRoom extends AppCompatActivity {
+public class Garden extends AppCompatActivity {
     RecyclerView recyclerView;
     ArrayList<String> arrayList;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_bad_room);
+        setContentView(R.layout.activity_garden);
         recyclerView = findViewById(R.id.bad_room);
         arrayList= new ArrayList<>();
         recImage();
@@ -33,7 +32,7 @@ public class BadRoom extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        Intent i = new Intent(BadRoom.this, MainActivity.class);
+        Intent i = new Intent(Garden.this, MainActivity.class);
         startActivity(i);
 
 

@@ -19,14 +19,14 @@ import java.util.ArrayList;
 
 public class DrawingRoom extends AppCompatActivity {
     RecyclerView recyclerView;
-    ArrayList arrayList;
+    ArrayList<String> arrayList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drawing_room);
         recyclerView = findViewById(R.id.bad_room);
-        arrayList=new ArrayList();
+        arrayList=new ArrayList<>();
         recImage();
 
     }
@@ -45,13 +45,13 @@ public class DrawingRoom extends AppCompatActivity {
 
         final LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
 
-        for (int i = 1; i <= 5; i++) {
-            String path = i + ".jpeg";
+        for (int i = 0; i < 5; i++) {
+            String path = i + ".jpg";
 
 
             FirebaseStorage storage = FirebaseStorage.getInstance();
 
-            StorageReference storageReference = storage.getReference().child("DemoPics")
+            StorageReference storageReference = storage.getReference().child("viewPagerPics")
                     .child(path);
 
             storageReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
@@ -60,7 +60,7 @@ public class DrawingRoom extends AppCompatActivity {
 
                     arrayList.add(uri.toString());
                     recyclerView.setLayoutManager(linearLayoutManager);
-                    recyclerView.setAdapter(new RecyclerAdapter(arrayList,DrawingRoom.this));
+                    recyclerView.setAdapter(new MyAdapter(getBaseContext(), arrayList));
                 }
             }).addOnFailureListener(new OnFailureListener() {
                 @Override

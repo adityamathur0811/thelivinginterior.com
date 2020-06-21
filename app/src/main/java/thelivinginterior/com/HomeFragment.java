@@ -12,8 +12,6 @@ import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
@@ -37,10 +35,6 @@ public class HomeFragment extends Fragment implements Button.OnClickListener {
     int pageCount=0;
 
     Button b1,b2,b3,b4,b5,b6;
-
-    Integer    image[] = {R.drawable.one,R.drawable.one,R.drawable.one,
-            R.drawable.one,R.drawable.one};
-
 
     ArrayList<String> picArray,pic;
     ArrayList<String> demoPic;
@@ -71,7 +65,7 @@ public class HomeFragment extends Fragment implements Button.OnClickListener {
 
 
         viewPagerImages();
-        recImage();
+
         recyclerViewImage();
 
         return v;
@@ -131,35 +125,6 @@ public class HomeFragment extends Fragment implements Button.OnClickListener {
 
 
     }
-    private void recImage() {
-
-
-        for (int i = 0; i < 5; i++) {
-            String path = i + ".jpg";
-
-
-            FirebaseStorage storage = FirebaseStorage.getInstance();
-
-            StorageReference storageReference = storage.getReference().child("viewPagerPics")
-                    .child(path);
-
-            storageReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                @Override
-                public void onSuccess(Uri uri) {
-
-                    picArray.add(uri.toString());
-
-                }
-            }).addOnFailureListener(new OnFailureListener() {
-                @Override
-                public void onFailure(@NonNull Exception e) {
-                    Log.d("myApp", "error");
-                }
-            });
-
-
-        }
-    }
 
 
     @Override
@@ -172,6 +137,26 @@ public class HomeFragment extends Fragment implements Button.OnClickListener {
         if (v==b2)
         {
             Intent i=new Intent(getActivity(),DrawingRoom.class);
+            startActivity(i);
+        }
+        if (v==b3)
+        {
+            Intent i=new Intent(getActivity(),Kitchen.class);
+            startActivity(i);
+        }
+        if (v==b4)
+        {
+            Intent i=new Intent(getActivity(),BathRoom.class);
+            startActivity(i);
+        }
+        if (v==b5)
+        {
+            Intent i=new Intent(getActivity(),Terrace.class);
+            startActivity(i);
+        }
+        else
+        {
+            Intent i=new Intent(getActivity(),Garden.class);
             startActivity(i);
         }
 

@@ -28,9 +28,7 @@
                 <androidx.viewpager.widget.ViewPager
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:id="@+id/viewpager"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentStart="true" />
+                    android:id="@+id/viewpager" />
                 <me.relex.circleindicator.CircleIndicator
                     android:id="@+id/indicator"
                     android:layout_width="match_parent"
@@ -63,13 +61,13 @@
                     android:fontFamily="@font/almendra"
                     android:textStyle="bold"
                     android:layout_marginBottom="5dp"
-                    android:textColor="#000000"></TextView>
+                    android:textColor="#000000" />
 
                 <View
                     android:layout_width="185dp"
                     android:layout_height="1dp"
                     android:layout_gravity="center"
-                    android:background="#000000"></View>
+                    android:background="#000000" />
 
 
 
@@ -86,15 +84,16 @@
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:layout_marginRight="10dp"
+                        android:layout_marginEnd="10dp"
                         android:background="@drawable/grad"
-                        android:text="Kitchen"
+                        android:text="@string/bad_room"
                         android:textAllCaps="false"
-                        android:layout_marginLeft="5dp"
+                        android:layout_marginStart="5dp"
                         android:fontFamily="@font/amita"
                         android:textStyle="bold"
                         android:textSize="18sp"
-                        android:textColor="#000000" />
+                        android:textColor="#000000"
+                        tools:ignore="ButtonStyle" />
 
                     <Button
                         android:id="@+id/drawingRoom"
@@ -102,13 +101,14 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:background="@drawable/gradback"
-                        android:text="Bath Room"
-                        android:layout_marginRight="5dp"
+                        android:text="@string/drawing_room"
+                        android:layout_marginEnd="5dp"
                         android:textAllCaps="false"
                         android:fontFamily="@font/amita"
                         android:textStyle="bold"
                         android:textSize="18sp"
-                        android:textColor="#000000" />
+                        android:textColor="#000000"
+                        tools:ignore="ButtonStyle" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -123,15 +123,16 @@
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:layout_marginRight="10dp"
+                        android:layout_marginEnd="10dp"
                         android:background="@drawable/back"
-                        android:text="Kitchen"
+                        android:text="@string/kitchen"
                         android:textAllCaps="false"
-                        android:layout_marginLeft="5dp"
+                        android:layout_marginStart="5dp"
                         android:fontFamily="@font/amita"
                         android:textStyle="bold"
                         android:textSize="18sp"
-                        android:textColor="#000000" />
+                        android:textColor="#000000"
+                        tools:ignore="ButtonStyle" />
 
                     <Button
                         android:id="@+id/bathRoom"
@@ -139,13 +140,14 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:background="@drawable/backgrad"
-                        android:text="Bath Room"
-                        android:layout_marginRight="5dp"
+                        android:text="@string/bath_room"
+                        android:layout_marginEnd="5dp"
                         android:textAllCaps="false"
                         android:fontFamily="@font/amita"
                         android:textStyle="bold"
                         android:textSize="18sp"
-                        android:textColor="#000000" />
+                        android:textColor="#000000"
+                        tools:ignore="ButtonStyle" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -159,16 +161,17 @@
                         android:id="@+id/terrace"
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginLeft="5dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginStart="5dp"
                         android:background="@drawable/gradback"
                         android:layout_weight="1"
-                        android:text="Terrace"
+                        android:text="@string/terrace"
                         android:textAllCaps="false"
                         android:fontFamily="@font/amita"
                         android:textStyle="bold"
                         android:textSize="18sp"
-                        android:textColor="#000000" />
+                        android:textColor="#000000"
+                        tools:ignore="ButtonStyle" />
 
                     <Button
                         android:id="@+id/garden"
@@ -176,13 +179,14 @@
                         android:layout_height="wrap_content"
                         android:background="@drawable/garden"
                         android:layout_weight="1"
-                        android:text="Garden"
+                        android:text="@string/garden"
                         android:textAllCaps="false"
                         android:fontFamily="@font/amita"
                         android:textStyle="bold"
                         android:textSize="18sp"
-                        android:layout_marginRight="5dp"
-                        android:textColor="#000000" />
+                        android:layout_marginEnd="5dp"
+                        android:textColor="#000000"
+                        tools:ignore="ButtonStyle" />
                 </LinearLayout>
 
 
@@ -196,7 +200,7 @@
     <TextView
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:text="Our finished projects!"
+        android:text="@string/our_finished_projects"
         android:layout_gravity="center"
         android:textSize="12sp"
         android:padding="2dp"
