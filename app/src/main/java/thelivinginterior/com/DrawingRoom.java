@@ -36,10 +36,11 @@ public class DrawingRoom extends AppCompatActivity {
         LinearLayoutManager linearLayoutManager=new LinearLayoutManager(this);
         recyclerView.setLayoutManager(linearLayoutManager);
         databaseReference= FirebaseDatabase.getInstance().getReference("DrawingRoomImages");
-        arrayList=new ArrayList<>();
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                arrayList=new ArrayList<>();
+
                 for(DataSnapshot snapshot:dataSnapshot.getChildren())
                 {
                     Pojo pojo=snapshot.getValue(Pojo.class);

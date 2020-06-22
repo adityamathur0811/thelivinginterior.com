@@ -28,18 +28,18 @@ public class BadRoom extends AppCompatActivity {
         recyclerView = findViewById(R.id.badRoom);
 
 
-        LinearLayoutManager linearLayoutManager=new LinearLayoutManager(this);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(linearLayoutManager);
-        databaseReference= FirebaseDatabase.getInstance().getReference("BadRoomImages");
-        arrayList=new ArrayList<>();
+        databaseReference = FirebaseDatabase.getInstance().getReference("BadRoomImages");
+
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for(DataSnapshot snapshot:dataSnapshot.getChildren())
-                {
-                    Pojo product=snapshot.getValue(Pojo.class);
+                arrayList = new ArrayList<>();
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                    Pojo product = snapshot.getValue(Pojo.class);
                     arrayList.add(product);
-                    recyclerView.setAdapter(new Adaapter(BadRoom.this,arrayList));
+                    recyclerView.setAdapter(new Adaapter(BadRoom.this, arrayList));
                 }
             }
 
@@ -52,15 +52,13 @@ public class BadRoom extends AppCompatActivity {
     }
 
 
-
     @Override
     public void onBackPressed() {
         Intent i = new Intent(BadRoom.this, MainActivity.class);
         startActivity(i);
 
 
-
         super.onBackPressed();
     }
 
-  }
+}

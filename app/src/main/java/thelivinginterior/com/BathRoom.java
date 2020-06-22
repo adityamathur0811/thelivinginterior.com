@@ -35,10 +35,11 @@ public class BathRoom extends AppCompatActivity {
         LinearLayoutManager linearLayoutManager=new LinearLayoutManager(this);
         recyclerView.setLayoutManager(linearLayoutManager);
         databaseReference= FirebaseDatabase.getInstance().getReference("BathRoomImages");
-        arrayList=new ArrayList<>();
+
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                arrayList=new ArrayList<>();
                 for(DataSnapshot snapshot:dataSnapshot.getChildren())
                 {
                     Pojo pojo=snapshot.getValue(Pojo.class);

@@ -81,10 +81,11 @@ public class HomeFragment extends Fragment implements Button.OnClickListener {
     public void viewPagerImages() {
 
         databaseReference= FirebaseDatabase.getInstance().getReference("ViewPager");
-        demoPic = new ArrayList<>();
+
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                demoPic = new ArrayList<>();
                 for(DataSnapshot snapshot:dataSnapshot.getChildren())
                 {
                     Pojo pojo=snapshot.getValue(Pojo.class);
