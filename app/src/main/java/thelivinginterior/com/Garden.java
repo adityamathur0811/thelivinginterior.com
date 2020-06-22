@@ -34,7 +34,7 @@ public class Garden extends AppCompatActivity {
         arrayList= new ArrayList<>();
         LinearLayoutManager linearLayoutManager=new LinearLayoutManager(this);
         recyclerView.setLayoutManager(linearLayoutManager);
-        databaseReference= FirebaseDatabase.getInstance().getReference("BadRoomImages");
+        databaseReference= FirebaseDatabase.getInstance().getReference("GardenImages");
 
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override

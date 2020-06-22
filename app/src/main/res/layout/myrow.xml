@@ -19,23 +19,25 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
             <ImageView
                 android:id="@+id/image"
+                android:src="@drawable/garden"
                 android:scaleType="centerCrop"
                 android:layout_width="match_parent"
                 android:layout_height="220dp"
                 tools:ignore="ContentDescription">
             </ImageView>
     <TextView
-        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text=""
+        android:background="@color/offWhite"
         android:textColor="@color/black"
-        android:textSize="20sp"
-        android:paddingLeft="5dp"
+        android:padding="7dp"
+        android:textSize="14sp"
+        android:fontFamily="sans-serif"
         android:id="@+id/text"/>
     </LinearLayout>
 </androidx.cardview.widget.CardView>

@@ -69,125 +69,371 @@
                     android:layout_gravity="center"
                     android:background="#000000" />
 
-
-
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="10dp"
-
                     android:orientation="horizontal">
-
-                    <Button
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        app:cardCornerRadius="5dp"
                         android:id="@+id/bedRoom"
-                        android:layout_width="100dp"
                         android:layout_height="wrap_content"
+                        app:cardUseCompatPadding="true"
+                        app:cardElevation="5dp"
                         android:layout_weight="1"
-                        android:layout_marginEnd="10dp"
-                        android:background="@drawable/grad"
-                        android:text="@string/bad_room"
-                        android:textAllCaps="false"
-                        android:layout_marginStart="5dp"
-                        android:fontFamily="@font/amita"
-                        android:textStyle="bold"
-                        android:textSize="18sp"
-                        android:textColor="#000000"
-                        tools:ignore="ButtonStyle" />
+                        >
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:background="#ffffff"
+                                android:layout_marginTop="4dp"
+                                android:layout_marginBottom="4dp"
+                                android:layout_marginLeft="4dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/bed"
+                                ></ImageView>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Bed Room"
+                                android:gravity="center"
+                                android:background="#ffffff"
+                                android:textAllCaps="false"
+                                android:layout_gravity="center"
+                                android:textStyle="bold"
+                                android:textSize="18sp"
+                                android:textColor="#000000"
+                                tools:ignore="ButtonStyle" />
+                        </LinearLayout>
 
-                    <Button
-                        android:id="@+id/drawingRoom"
-                        android:layout_width="100dp"
+
+                    </androidx.cardview.widget.CardView>
+
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:background="@drawable/gradback"
-                        android:text="@string/drawing_room"
-                        android:layout_marginEnd="5dp"
-                        android:textAllCaps="false"
-                        android:fontFamily="@font/amita"
-                        android:textStyle="bold"
-                        android:textSize="18sp"
-                        android:textColor="#000000"
-                        tools:ignore="ButtonStyle" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="10dp"
-
-                    android:orientation="horizontal">
-
-                    <Button
-                        android:id="@+id/kitchen"
-                        android:layout_width="100dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:layout_marginEnd="10dp"
-                        android:background="@drawable/back"
-                        android:text="@string/kitchen"
-                        android:textAllCaps="false"
-                        android:layout_marginStart="5dp"
-                        android:fontFamily="@font/amita"
-                        android:textStyle="bold"
-                        android:textSize="18sp"
-                        android:textColor="#000000"
-                        tools:ignore="ButtonStyle" />
-
-                    <Button
                         android:id="@+id/bathRoom"
-                        android:layout_width="100dp"
+                        app:cardUseCompatPadding="true"
+                        app:cardElevation="5dp"
+                        app:cardCornerRadius="5dp"
+                        android:layout_weight="1">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:background="#ffffff"
+                                android:layout_marginBottom="4dp"
+                                android:layout_marginTop="4dp"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="4dp"
+                                android:src="@drawable/bathroom"
+                                ></ImageView>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="#ffffff"
+                                android:text="Bath Room"
+                                android:textAllCaps="false"
+                                android:gravity="center"
+                                android:layout_gravity="center"
+                                android:textStyle="bold"
+                                android:textSize="18sp"
+                                android:textColor="#000000"
+                                tools:ignore="ButtonStyle" />
+                        </LinearLayout>
+
+
+                    </androidx.cardview.widget.CardView>
+
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-8dp"
+                    android:orientation="horizontal">
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        app:cardCornerRadius="5dp"
+                        android:id="@+id/drawingRoom"
                         android:layout_height="wrap_content"
+                        app:cardUseCompatPadding="true"
+                        app:cardElevation="5dp"
                         android:layout_weight="1"
-                        android:background="@drawable/backgrad"
-                        android:text="@string/bath_room"
-                        android:layout_marginEnd="5dp"
-                        android:textAllCaps="false"
-                        android:fontFamily="@font/amita"
-                        android:textStyle="bold"
-                        android:textSize="18sp"
-                        android:textColor="#000000"
-                        tools:ignore="ButtonStyle" />
+                        >
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:background="#ffffff"
+                                android:layout_marginTop="4dp"
+                                android:layout_marginBottom="4dp"
+                                android:layout_marginLeft="4dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/drawing"
+                                ></ImageView>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Drawing Room"
+                                android:layout_marginLeft="2dp"
+                                android:gravity="center"
+                                android:background="#ffffff"
+                                android:textAllCaps="false"
+                                android:layout_gravity="center"
+                                android:textStyle="bold"
+                                android:textSize="18sp"
+                                android:textColor="#000000"
+                                tools:ignore="ButtonStyle" />
+                        </LinearLayout>
+
+
+                    </androidx.cardview.widget.CardView>
+
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/kitchen"
+                        app:cardUseCompatPadding="true"
+                        app:cardElevation="5dp"
+                        app:cardCornerRadius="5dp"
+                        android:layout_weight="1">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:background="#ffffff"
+                                android:layout_marginBottom="4dp"
+                                android:layout_marginTop="4dp"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="4dp"
+                                android:src="@drawable/kitchen"
+                                ></ImageView>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="#ffffff"
+                                android:text="Kitchen"
+                                android:textAllCaps="false"
+                                android:gravity="center"
+                                android:layout_gravity="center"
+                                android:textStyle="bold"
+                                android:textSize="18sp"
+                                android:textColor="#000000"
+                                tools:ignore="ButtonStyle" />
+                        </LinearLayout>
+
+
+                    </androidx.cardview.widget.CardView>
+
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="-8dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        app:cardCornerRadius="5dp"
+                        android:layout_height="wrap_content"
+                        app:cardUseCompatPadding="true"
+                        app:cardElevation="5dp"
+                        android:id="@+id/terrace"
+                        android:layout_weight="1"
+                        >
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:background="#ffffff"
+                                android:layout_marginTop="4dp"
+                                android:layout_marginBottom="4dp"
+                                android:layout_marginLeft="4dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/terrace"
+                                ></ImageView>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Terrace"
+                                android:gravity="center"
+                                android:background="#ffffff"
+                                android:textAllCaps="false"
+                                android:layout_gravity="center"
+                                android:textStyle="bold"
+                                android:textSize="18sp"
+                                android:textColor="#000000"
+                                tools:ignore="Terrace" />
+                        </LinearLayout>
+
+
+                    </androidx.cardview.widget.CardView>
+
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/frontElevation"
+                        app:cardUseCompatPadding="true"
+                        app:cardElevation="5dp"
+                        app:cardCornerRadius="5dp"
+                        android:layout_weight="1">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:background="#ffffff"
+                                android:layout_marginBottom="4dp"
+                                android:layout_marginTop="4dp"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="4dp"
+                                android:src="@drawable/front"
+                                ></ImageView>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="#ffffff"
+                                android:layout_marginLeft="2dp"
+                                android:text="Front Elevation"
+                                android:textAllCaps="false"
+                                android:gravity="center"
+                                android:layout_gravity="center"
+                                android:textStyle="bold"
+                                android:textSize="18sp"
+                                android:textColor="#000000"
+                                tools:ignore="ButtonStyle" />
+                        </LinearLayout>
+
+
+                    </androidx.cardview.widget.CardView>
+
+
+
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="-8dp"
                     android:orientation="horizontal">
-
-                    <Button
-                        android:id="@+id/terrace"
-                        android:layout_width="100dp"
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        app:cardCornerRadius="5dp"
+                        android:id="@+id/furniture"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginStart="5dp"
-                        android:background="@drawable/gradback"
-                        android:layout_weight="1"
-                        android:text="@string/terrace"
-                        android:textAllCaps="false"
-                        android:fontFamily="@font/amita"
-                        android:textStyle="bold"
-                        android:textSize="18sp"
-                        android:textColor="#000000"
-                        tools:ignore="ButtonStyle" />
+                        app:cardUseCompatPadding="true"
+                        app:cardElevation="5dp"
+                        android:layout_weight="1">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:background="#ffffff"
+                                android:layout_marginTop="4dp"
+                                android:layout_marginBottom="4dp"
+                                android:layout_marginLeft="4dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/furniture"
+                                ></ImageView>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Furniture"
+                                android:gravity="center"
+                                android:background="#ffffff"
+                                android:textAllCaps="false"
+                                android:layout_gravity="center"
+                                android:textStyle="bold"
+                                android:textSize="18sp"
+                                android:textColor="#000000"
+                                tools:ignore="ButtonStyle" />
+                        </LinearLayout>
 
-                    <Button
-                        android:id="@+id/garden"
-                        android:layout_width="100dp"
+
+                    </androidx.cardview.widget.CardView>
+
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/garden"
-                        android:layout_weight="1"
-                        android:text="@string/garden"
-                        android:textAllCaps="false"
-                        android:fontFamily="@font/amita"
-                        android:textStyle="bold"
-                        android:textSize="18sp"
-                        android:layout_marginEnd="5dp"
-                        android:textColor="#000000"
-                        tools:ignore="ButtonStyle" />
+                        app:cardUseCompatPadding="true"
+                        android:id="@+id/maps"
+                        app:cardElevation="5dp"
+                        app:cardCornerRadius="5dp"
+                        android:layout_weight="1">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:background="#ffffff"
+                                android:layout_marginBottom="4dp"
+                                android:layout_marginTop="4dp"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="4dp"
+                                android:src="@drawable/twodesign"
+                                ></ImageView>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="#ffffff"
+                                android:text="2D|3D maps"
+                                android:textAllCaps="false"
+                                android:gravity="center"
+                                android:layout_gravity="center"
+                                android:textStyle="bold"
+                                android:textSize="18sp"
+                                android:textColor="#000000"
+                                tools:ignore="ButtonStyle" />
+                        </LinearLayout>
+
+
+                    </androidx.cardview.widget.CardView>
+
+
+
                 </LinearLayout>
+
+
+
+
 
 
             </LinearLayout>
