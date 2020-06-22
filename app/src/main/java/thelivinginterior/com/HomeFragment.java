@@ -34,7 +34,7 @@ import java.util.TimerTask;
 import me.relex.circleindicator.CircleIndicator;
 
 
-public class HomeFragment extends Fragment implements Button.OnClickListener {
+public class HomeFragment extends Fragment implements CardView.OnClickListener {
     ViewPager viewPager;
     CircleIndicator indicator;
     RecyclerView recyclerView;
@@ -140,17 +140,17 @@ public class HomeFragment extends Fragment implements Button.OnClickListener {
         }
         if (v==b2)
         {
-            Intent i=new Intent(getActivity(),DrawingRoom.class);
+            Intent i=new Intent(getActivity(),BathRoom.class);
             startActivity(i);
         }
         if (v==b3)
         {
-            Intent i=new Intent(getActivity(),Kitchen.class);
+            Intent i=new Intent(getActivity(),DrawingRoom.class);
             startActivity(i);
         }
         if (v==b4)
         {
-            Intent i=new Intent(getActivity(),BathRoom.class);
+            Intent i=new Intent(getActivity(),Kitchen.class);
             startActivity(i);
         }
         if (v==b5)

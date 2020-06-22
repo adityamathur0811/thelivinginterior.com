@@ -2,6 +2,7 @@ package thelivinginterior.com;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -22,7 +23,7 @@ import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
 
-public class Garden extends AppCompatActivity {
+public class Garden extends AppCompatActivity  {
     RecyclerView recyclerView;
     ArrayList<Pojo> arrayList;
     DatabaseReference databaseReference;
