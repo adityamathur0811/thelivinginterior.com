@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         ChipNavigationBar bottomNavigationView = findViewById(R.id.nav);
+        bottomNavigationView.setItemSelected(R.id.item1,true);
         bottomNavigationView.setOnItemSelectedListener(new ChipNavigationBar.OnItemSelectedListener() {
             @Override
             public void onItemSelected(int i) {
