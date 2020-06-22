@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:background="#E8EDEB"
+    android:background="@color/backGround"
     android:layout_height="match_parent"
     tools:context=".HomeFragment">
 
@@ -76,37 +76,40 @@
                     <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
                         app:cardCornerRadius="5dp"
+                        app:cardBackgroundColor="@color/backGround"
                         android:id="@+id/bedRoom"
                         android:layout_height="wrap_content"
                         app:cardUseCompatPadding="true"
-                        app:cardElevation="5dp"
+                        app:cardElevation="3dp"
                         android:layout_weight="1"
                         >
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
+                            android:background="@color/backGround"
                             android:orientation="horizontal">
                             <ImageView
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
-                                android:background="#ffffff"
+                                android:background="@color/backGround"
                                 android:layout_marginTop="4dp"
                                 android:layout_marginBottom="4dp"
                                 android:layout_marginLeft="4dp"
                                 android:layout_gravity="center"
                                 android:src="@drawable/bed"
                                 ></ImageView>
+
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Bed Room"
-                                android:gravity="center"
-                                android:background="#ffffff"
-                                android:textAllCaps="false"
                                 android:layout_gravity="center"
-                                android:textStyle="bold"
-                                android:textSize="18sp"
+                                android:background="@color/backGround"                                android:fontFamily="@font/adamina"
+                                android:gravity="center"
+                                android:text="Bed Room"
+                                android:textAllCaps="false"
                                 android:textColor="#000000"
+                                android:textSize="15sp"
+                                android:textStyle="normal"
                                 tools:ignore="ButtonStyle" />
                         </LinearLayout>
 
@@ -118,8 +121,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:id="@+id/bathRoom"
+                        app:cardBackgroundColor="@color/backGround"
                         app:cardUseCompatPadding="true"
-                        app:cardElevation="5dp"
+                        app:cardElevation="3dp"
                         app:cardCornerRadius="5dp"
                         android:layout_weight="1">
 
@@ -130,7 +134,7 @@
                             <ImageView
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
-                                android:background="#ffffff"
+                                android:background="@color/backGround"
                                 android:layout_marginBottom="4dp"
                                 android:layout_marginTop="4dp"
                                 android:layout_gravity="center"
@@ -140,13 +144,14 @@
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:background="#ffffff"
+                                android:background="@color/backGround"
                                 android:text="Bath Room"
                                 android:textAllCaps="false"
                                 android:gravity="center"
+                                android:fontFamily="@font/adamina"
                                 android:layout_gravity="center"
-                                android:textStyle="bold"
-                                android:textSize="18sp"
+                                android:textStyle="normal"
+                                android:textSize="15sp"
                                 android:textColor="#000000"
                                 tools:ignore="ButtonStyle" />
                         </LinearLayout>
@@ -162,15 +167,16 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="-8dp"
+                    android:layout_marginTop="-7dp"
                     android:orientation="horizontal">
                     <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
                         app:cardCornerRadius="5dp"
+                        app:cardBackgroundColor="@color/backGround"
                         android:id="@+id/drawingRoom"
                         android:layout_height="wrap_content"
                         app:cardUseCompatPadding="true"
-                        app:cardElevation="5dp"
+                        app:cardElevation="3dp"
                         android:layout_weight="1"
                         >
                         <LinearLayout
@@ -180,7 +186,7 @@
                             <ImageView
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
-                                android:background="#ffffff"
+                                android:background="@color/backGround"
                                 android:layout_marginTop="4dp"
                                 android:layout_marginBottom="4dp"
                                 android:layout_marginLeft="4dp"
@@ -193,11 +199,12 @@
                                 android:text="Drawing Room"
                                 android:layout_marginLeft="2dp"
                                 android:gravity="center"
-                                android:background="#ffffff"
+                                android:background="@color/backGround"
                                 android:textAllCaps="false"
                                 android:layout_gravity="center"
-                                android:textStyle="bold"
-                                android:textSize="18sp"
+                                android:textStyle="normal"
+                                android:textSize="15sp"
+                                android:fontFamily="@font/adamina"
                                 android:textColor="#000000"
                                 tools:ignore="ButtonStyle" />
                         </LinearLayout>
@@ -210,8 +217,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:id="@+id/kitchen"
+                        app:cardBackgroundColor="@color/backGround"
                         app:cardUseCompatPadding="true"
-                        app:cardElevation="5dp"
+                        app:cardElevation="3dp"
                         app:cardCornerRadius="5dp"
                         android:layout_weight="1">
 
@@ -222,7 +230,7 @@
                             <ImageView
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
-                                android:background="#ffffff"
+                                android:background="@color/backGround"
                                 android:layout_marginBottom="4dp"
                                 android:layout_marginTop="4dp"
                                 android:layout_gravity="center"
@@ -232,13 +240,14 @@
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:background="#ffffff"
+                                android:background="@color/backGround"
                                 android:text="Kitchen"
                                 android:textAllCaps="false"
                                 android:gravity="center"
                                 android:layout_gravity="center"
-                                android:textStyle="bold"
-                                android:textSize="18sp"
+                                android:textStyle="normal"
+                                android:textSize="15sp"
+                                android:fontFamily="@font/adamina"
                                 android:textColor="#000000"
                                 tools:ignore="ButtonStyle" />
                         </LinearLayout>
@@ -253,15 +262,16 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_marginTop="-8dp"
+                    android:layout_marginTop="-7dp"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
                     <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
+                        app:cardBackgroundColor="@color/backGround"
                         app:cardCornerRadius="5dp"
                         android:layout_height="wrap_content"
                         app:cardUseCompatPadding="true"
-                        app:cardElevation="5dp"
+                        app:cardElevation="3dp"
                         android:id="@+id/terrace"
                         android:layout_weight="1"
                         >
@@ -272,7 +282,7 @@
                             <ImageView
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
-                                android:background="#ffffff"
+                                android:background="@color/backGround"
                                 android:layout_marginTop="4dp"
                                 android:layout_marginBottom="4dp"
                                 android:layout_marginLeft="4dp"
@@ -283,12 +293,13 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="Terrace"
+                                android:fontFamily="@font/adamina"
                                 android:gravity="center"
-                                android:background="#ffffff"
+                                android:background="@color/backGround"
                                 android:textAllCaps="false"
                                 android:layout_gravity="center"
-                                android:textStyle="bold"
-                                android:textSize="18sp"
+                                android:textStyle="normal"
+                                android:textSize="15sp"
                                 android:textColor="#000000"
                                 tools:ignore="Terrace" />
                         </LinearLayout>
@@ -300,9 +311,10 @@
                     <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        app:cardBackgroundColor="@color/backGround"
                         android:id="@+id/frontElevation"
                         app:cardUseCompatPadding="true"
-                        app:cardElevation="5dp"
+                        app:cardElevation="3dp"
                         app:cardCornerRadius="5dp"
                         android:layout_weight="1">
 
@@ -313,7 +325,7 @@
                             <ImageView
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
-                                android:background="#ffffff"
+                                android:background="@color/backGround"
                                 android:layout_marginBottom="4dp"
                                 android:layout_marginTop="4dp"
                                 android:layout_gravity="center"
@@ -323,14 +335,15 @@
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:background="#ffffff"
+                                android:background="@color/backGround"
                                 android:layout_marginLeft="2dp"
+                                android:fontFamily="@font/adamina"
                                 android:text="Front Elevation"
                                 android:textAllCaps="false"
                                 android:gravity="center"
                                 android:layout_gravity="center"
-                                android:textStyle="bold"
-                                android:textSize="18sp"
+                                android:textStyle="normal"
+                                android:textSize="15sp"
                                 android:textColor="#000000"
                                 tools:ignore="ButtonStyle" />
                         </LinearLayout>
@@ -345,15 +358,17 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="-8dp"
+                    android:layout_marginTop="-7dp"
+                    android:layout_marginBottom="5dp"
                     android:orientation="horizontal">
                     <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
+                        app:cardBackgroundColor="@color/backGround"
                         app:cardCornerRadius="5dp"
                         android:id="@+id/furniture"
                         android:layout_height="wrap_content"
                         app:cardUseCompatPadding="true"
-                        app:cardElevation="5dp"
+                        app:cardElevation="3dp"
                         android:layout_weight="1">
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -362,7 +377,7 @@
                             <ImageView
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
-                                android:background="#ffffff"
+                                android:background="@color/backGround"
                                 android:layout_marginTop="4dp"
                                 android:layout_marginBottom="4dp"
                                 android:layout_marginLeft="4dp"
@@ -374,11 +389,12 @@
                                 android:layout_height="wrap_content"
                                 android:text="Furniture"
                                 android:gravity="center"
-                                android:background="#ffffff"
+                                android:fontFamily="@font/adamina"
+                                android:background="@color/backGround"
                                 android:textAllCaps="false"
                                 android:layout_gravity="center"
-                                android:textStyle="bold"
-                                android:textSize="18sp"
+                                android:textStyle="normal"
+                                android:textSize="15sp"
                                 android:textColor="#000000"
                                 tools:ignore="ButtonStyle" />
                         </LinearLayout>
@@ -392,7 +408,8 @@
                         android:layout_height="wrap_content"
                         app:cardUseCompatPadding="true"
                         android:id="@+id/maps"
-                        app:cardElevation="5dp"
+                        app:cardBackgroundColor="@color/backGround"
+                        app:cardElevation="3dp"
                         app:cardCornerRadius="5dp"
                         android:layout_weight="1">
 
@@ -403,7 +420,7 @@
                             <ImageView
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
-                                android:background="#ffffff"
+                                android:background="@color/backGround"
                                 android:layout_marginBottom="4dp"
                                 android:layout_marginTop="4dp"
                                 android:layout_gravity="center"
@@ -413,13 +430,14 @@
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:background="#ffffff"
-                                android:text="2D|3D maps"
+                                android:background="@color/backGround"
+                                android:text="2d | 3d maps"
                                 android:textAllCaps="false"
                                 android:gravity="center"
                                 android:layout_gravity="center"
-                                android:textStyle="bold"
-                                android:textSize="18sp"
+                                android:textStyle="normal"
+                                android:textSize="15sp"
+                                android:fontFamily="@font/adamina"
                                 android:textColor="#000000"
                                 tools:ignore="ButtonStyle" />
                         </LinearLayout>
