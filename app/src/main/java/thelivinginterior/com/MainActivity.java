@@ -23,7 +23,7 @@ import java.util.Locale;
 public class MainActivity extends AppCompatActivity {
 
     Toolbar toolbar;
-    String search;
+    String search,whichFragment;
     FragmentManager fragmentManager;
     FragmentTransaction fragmentTransaction;
 
@@ -33,13 +33,12 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
         toolbar = findViewById(R.id.toolbar);
-        setFragment(new HomeFragment());
         setSupportActionBar(toolbar);
 
 
 
         ChipNavigationBar bottomNavigationView = findViewById(R.id.nav);
-        bottomNavigationView.setItemSelected(R.id.item1,true);
+
         bottomNavigationView.setOnItemSelectedListener(new ChipNavigationBar.OnItemSelectedListener() {
             @Override
             public void onItemSelected(int i) {
@@ -58,6 +57,35 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+        String temp=getIntent().getStringExtra("which");
+        if (temp==null)
+        {
+            whichFragment="home";
+        }
+        else
+        {
+            whichFragment=temp;
+        }
+        if (whichFragment.equalsIgnoreCase("home"))
+        {
+            setFragment(new HomeFragment());
+            bottomNavigationView.setItemSelected(R.id.item1,true);
+
+        }
+        else if (whichFragment.equalsIgnoreCase("product"))
+        {
+            setFragment(new ProductFragment());
+            bottomNavigationView.setItemSelected(R.id.item2,true);
+            whichFragment="home";
+        }
+        else {
+            setFragment(new ProductFragment());
+            bottomNavigationView.setItemSelected(R.id.item3,true);
+            whichFragment="home";
+
+        }
+
+
     }
 
     @Override

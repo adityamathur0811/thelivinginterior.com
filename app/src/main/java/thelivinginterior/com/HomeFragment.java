@@ -71,6 +71,8 @@ public class HomeFragment extends Fragment implements CardView.OnClickListener {
         b4.setOnClickListener(this);
         b5.setOnClickListener(this);
         b6.setOnClickListener(this);
+        b8.setOnClickListener(this);
+        b7.setOnClickListener(this);
 
 
 
@@ -165,12 +167,14 @@ public class HomeFragment extends Fragment implements CardView.OnClickListener {
         }
        if (v==b7)
         {
-            Intent i=new Intent(getActivity(),Frontelevation.class);
+            Intent i=new Intent(getActivity(),MainActivity.class);
+            i.putExtra("which","product");
             startActivity(i);
         }
         if(v==b8)
         {
-            Intent i=new Intent(getActivity(),Frontelevation.class);
+            Intent i=new Intent(getActivity(),MainActivity.class);
+            i.putExtra("which","services");
             startActivity(i);
         }
 
