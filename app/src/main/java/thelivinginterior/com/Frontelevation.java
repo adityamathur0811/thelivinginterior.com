@@ -1,41 +1,34 @@
 package thelivinginterior.com;
 
+import android.content.Intent;
+import android.os.Bundle;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
-import android.net.Uri;
-import android.os.Bundle;
-import android.util.Log;
-
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
 
-public class Garden extends AppCompatActivity  {
+public  class Frontelevation extends AppCompatActivity  {
     RecyclerView recyclerView;
     ArrayList<Pojo> arrayList;
     DatabaseReference databaseReference;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_garden);
+        setContentView(R.layout.activity_front_elevation);
         recyclerView = findViewById(R.id.garden);
         arrayList= new ArrayList<>();
         LinearLayoutManager linearLayoutManager=new LinearLayoutManager(this);
         recyclerView.setLayoutManager(linearLayoutManager);
-        databaseReference= FirebaseDatabase.getInstance().getReference("GardenImages");
+        databaseReference= FirebaseDatabase.getInstance().getReference("FrontElevation");
 
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -45,7 +38,7 @@ public class Garden extends AppCompatActivity  {
                 {
                     Pojo pojo=snapshot.getValue(Pojo.class);
                     arrayList.add(pojo);
-                    recyclerView.setAdapter(new Adaapter(Garden.this,arrayList));
+                    recyclerView.setAdapter(new Adaapter(Frontelevation.this,arrayList));
                 }
             }
 
@@ -60,7 +53,7 @@ public class Garden extends AppCompatActivity  {
 
     @Override
     public void onBackPressed() {
-        Intent i = new Intent(Garden.this, MainActivity.class);
+        Intent i = new Intent(Frontelevation.this, MainActivity.class);
         startActivity(i);
 
 

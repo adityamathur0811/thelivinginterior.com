@@ -1,5 +1,6 @@
 package thelivinginterior.com;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,12 +30,14 @@ Adaapter(Activity activity, ArrayList<Pojo> arrayList)
         return new MyViewHolder(v);
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-    Pojo pojo=arrayList.get(position);
+    Pojo pojo=arrayList.get((arrayList.size()-1)-position);
 
     holder.textView.setText(""+pojo.getDescription());
         Glide.with(activity).load(pojo.getImage()).into(holder.imageView);
+
 
 
 
@@ -45,7 +48,7 @@ Adaapter(Activity activity, ArrayList<Pojo> arrayList)
         return arrayList.size();
     }
 
-    class MyViewHolder extends RecyclerView.ViewHolder {
+    static class MyViewHolder extends RecyclerView.ViewHolder {
     ImageView imageView;
     TextView textView;
 

@@ -47,7 +47,13 @@ public class MainActivity extends AppCompatActivity {
              {
                  case R.id.item1:
                      setFragment(new HomeFragment());
-
+                        break;
+                 case R.id.item2:
+                     setFragment(new ProductFragment());
+                     break;
+                 case R.id.item3:
+                     setFragment(new OurServicesFragment());
+                     break;
              }
 
             }

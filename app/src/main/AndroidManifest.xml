@@ -11,12 +11,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Garden" />
         <activity android:name=".Terrace" />
         <activity android:name=".BathRoom" />
         <activity android:name=".Kitchen" />
         <activity android:name=".DrawingRoom" />
         <activity android:name=".BadRoom" />
+        <activity android:name=".Frontelevation" />
         <activity
             android:name=".MainActivity"
             android:windowSoftInputMode="adjustPan">

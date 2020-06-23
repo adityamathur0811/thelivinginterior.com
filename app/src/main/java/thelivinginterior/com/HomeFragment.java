@@ -160,17 +160,17 @@ public class HomeFragment extends Fragment implements CardView.OnClickListener {
         }
         if (v==b6)
         {
-            Intent i=new Intent(getActivity(),Garden.class);
+            Intent i=new Intent(getActivity(),Frontelevation.class);
             startActivity(i);
         }
-        if (v==b7)
+       if (v==b7)
         {
-            Intent i=new Intent(getActivity(),Garden.class);
+            Intent i=new Intent(getActivity(),Frontelevation.class);
             startActivity(i);
         }
         if(v==b8)
         {
-            Intent i=new Intent(getActivity(),Garden.class);
+            Intent i=new Intent(getActivity(),Frontelevation.class);
             startActivity(i);
         }
 
@@ -183,10 +183,11 @@ public class HomeFragment extends Fragment implements CardView.OnClickListener {
         recyclerView.setLayoutManager(linearLayoutManager);
 
         databaseReference= FirebaseDatabase.getInstance().getReference("HomeImages");
-        arrayList=new ArrayList<Pojo>();
+
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                arrayList=new ArrayList<Pojo>();
                 for(DataSnapshot snapshot:dataSnapshot.getChildren())
                 {
                     Pojo pojo=snapshot.getValue(Pojo.class);
