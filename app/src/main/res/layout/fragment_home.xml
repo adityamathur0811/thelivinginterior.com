@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:background="@color/backGround"
+    android:background="@color/backGrow"
     android:layout_height="match_parent"
     tools:context=".HomeFragment">
 
@@ -40,7 +40,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:cardCornerRadius="5dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 app:cardUseCompatPadding="true"
                 app:cardElevation="5dp">
             <LinearLayout
@@ -476,19 +476,23 @@
 
 
 </LinearLayout>
+
             <androidx.recyclerview.widget.RecyclerView
-                android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/recyclerView">
+                </androidx.recyclerview.widget.RecyclerView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
                 android:layout_marginTop="5dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/recyclerView2">
             </androidx.recyclerview.widget.RecyclerView>
 
-            <androidx.recyclerview.widget.RecyclerView
-                    android:layout_width="match_parent"
-                    android:layout_marginTop="5dp"
-                    android:layout_height="match_parent"
-                    android:id="@+id/recyclerView">
-                </androidx.recyclerview.widget.RecyclerView>
+
+
 
         </LinearLayout>
 

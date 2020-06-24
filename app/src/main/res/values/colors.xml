@@ -5,7 +5,8 @@
     <color name="colorAccent">#03DAC5</color>
     <color name="lightPurple">#BD8197</color>
     <color name="white">#ffffff</color>
-    <color name="backGround">#E8EDEB</color>
+    <color name="backGrow">#E8EDEB</color>
+    <color name="backGround">#f5f5f5</color>
     <color name="offWhite">#EDEAEA</color>
     <color name="buttonColor">#B89E9E</color>
     <color name="chipColor">#517A52</color>

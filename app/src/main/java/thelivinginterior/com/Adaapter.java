@@ -17,6 +17,7 @@ import java.util.ArrayList;
 public class Adaapter extends RecyclerView.Adapter<Adaapter.MyViewHolder> {
 ArrayList<Pojo> arrayList;
 Activity activity;
+
 Adaapter(Activity activity, ArrayList<Pojo> arrayList)
 {
     this.activity=activity;
@@ -35,10 +36,16 @@ Adaapter(Activity activity, ArrayList<Pojo> arrayList)
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
     Pojo pojo=arrayList.get((arrayList.size()-1)-position);
 
-    holder.textView.setText(""+pojo.getDescription());
+    if(pojo.getDescription().isEmpty() && !pojo.getImage().isEmpty())
+    {
+        Glide.with(activity).load(pojo.getImage()).into(holder.imageView);
+        holder.textView.setVisibility(View.GONE);
+    }
+    else {
+        holder.textView.setText("" + pojo.getDescription());
         Glide.with(activity).load(pojo.getImage()).into(holder.imageView);
 
-
+    }
 
 
     }
@@ -52,9 +59,11 @@ Adaapter(Activity activity, ArrayList<Pojo> arrayList)
     ImageView imageView;
     TextView textView;
 
+
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             imageView=itemView.findViewById(R.id.image);
+
             textView=itemView.findViewById(R.id.text);
         }
     }

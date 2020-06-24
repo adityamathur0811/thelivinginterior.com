@@ -13,8 +13,10 @@ import android.widget.Button;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -184,7 +186,7 @@ public class HomeFragment extends Fragment implements CardView.OnClickListener {
 
     private void getImages()
     {
-        LinearLayoutManager linearLayoutManager=new LinearLayoutManager(getContext());
+        StaggeredGridLayoutManager linearLayoutManager=new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(linearLayoutManager);
 
         databaseReference= FirebaseDatabase.getInstance().getReference("HomeImages");
