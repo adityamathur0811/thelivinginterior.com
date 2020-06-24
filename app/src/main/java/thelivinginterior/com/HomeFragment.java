@@ -37,7 +37,7 @@ import me.relex.circleindicator.CircleIndicator;
 public class HomeFragment extends Fragment implements CardView.OnClickListener {
     ViewPager viewPager;
     CircleIndicator indicator;
-    RecyclerView recyclerView;
+    RecyclerView recyclerView,recyclerView2;
     DatabaseReference databaseReference;
     ArrayList<Pojo> arrayList;
     int pageCount=0;
@@ -57,6 +57,7 @@ public class HomeFragment extends Fragment implements CardView.OnClickListener {
         viewPager=v.findViewById(R.id.viewpager);
         indicator=v.findViewById(R.id.indicator);
         recyclerView=v.findViewById(R.id.recyclerView);
+        recyclerView2=v.findViewById(R.id.recyclerView2);
         b1=v.findViewById(R.id.bedRoom);
         b2=v.findViewById(R.id.bathRoom);
         b3=v.findViewById(R.id.drawingRoom);
@@ -77,7 +78,7 @@ public class HomeFragment extends Fragment implements CardView.OnClickListener {
 
 
         viewPagerImages();
-
+        getVideo();
         getImages();
 
 
@@ -197,6 +198,31 @@ public class HomeFragment extends Fragment implements CardView.OnClickListener {
                     Pojo pojo=snapshot.getValue(Pojo.class);
                     arrayList.add(pojo);
                     recyclerView.setAdapter(new Adaapter(getActivity(),arrayList));
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+    }
+    private void getVideo()
+    {
+        LinearLayoutManager linearLayoutManager=new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,false);
+        recyclerView2.setLayoutManager(linearLayoutManager);
+
+        databaseReference= FirebaseDatabase.getInstance().getReference("Video");
+
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                arrayList=new ArrayList<Pojo>();
+                for(DataSnapshot snapshot:dataSnapshot.getChildren())
+                {
+                    Pojo pojo=snapshot.getValue(Pojo.class);
+                    arrayList.add(pojo);
+                    recyclerView2.setAdapter(new Adaapter2(getActivity(),arrayList));
                 }
             }
 

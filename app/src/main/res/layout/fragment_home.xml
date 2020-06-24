@@ -476,7 +476,12 @@
 
 
 </LinearLayout>
-
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/recyclerView2">
+            </androidx.recyclerview.widget.RecyclerView>
 
             <androidx.recyclerview.widget.RecyclerView
                     android:layout_width="match_parent"
